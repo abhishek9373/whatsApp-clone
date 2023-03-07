@@ -16,6 +16,10 @@ const { v4: uuidv4 } = require("uuid");
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: "https://chat-whatsapp-clone.netlify.app",
+  reconnection: true,
+  reconnectionAttempts: 2000,
+  reconnectionDelay: 1000,
+  timeout: 20000
 });
 
 const PORT = 5000;
