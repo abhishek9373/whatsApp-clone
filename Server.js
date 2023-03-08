@@ -16,6 +16,10 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, {
    cors: {
     origin: "https://chat-whatsapp-clone.netlify.app",
+    reconnection: true,
+    reconnectionAttempts: 10,
+    reconnectionDelay: 1000,
+    randomizationFactor: 0.5
    }
 });
 
