@@ -14,9 +14,7 @@ const { Server } = require("socket.io");
 // socket server
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-   cors: {
-    origin: "https://chat-whatsapp-clone.netlify.app"
-   }
+   cors:"https://chat-whatsapp-clone.netlify.app"
 });
 
 const PORT = 5000;
