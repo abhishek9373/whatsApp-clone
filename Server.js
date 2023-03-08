@@ -10,16 +10,12 @@ const bodyparser = require("body-parser");
 const { ObjectId } = require("mongodb");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
-const { v4: uuidv4 } = require("uuid");
 
 // socket server
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: "https://chat-whatsapp-clone.netlify.app",
   reconnection: true,
-  reconnectionAttempts: 2000,
-  reconnectionDelay: 1000,
-  timeout: 1000
 });
 
 const PORT = 5000;
