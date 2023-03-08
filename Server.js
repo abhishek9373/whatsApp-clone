@@ -24,6 +24,13 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(bodyparser.json());
 
+const setheader = (req,res,next) =>{
+  res.header('Access-Control-Allow-Origin', 'https://chat-whatsapp-clone.netlify.app');
+  next();
+}
+
+app.use(setheader);
+
 // all models
 const { Usermodel, ConnectionModel, MessageModel } = require("./Models");
 const bcryptjs = require("bcryptjs");
