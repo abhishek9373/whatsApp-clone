@@ -19,7 +19,7 @@ const io = new Server(httpServer, {
   reconnection: true,
   reconnectionAttempts: 2000,
   reconnectionDelay: 1000,
-  timeout: 20000
+  timeout: 1000
 });
 
 const PORT = 5000;
