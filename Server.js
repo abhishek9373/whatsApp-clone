@@ -15,7 +15,7 @@ const { Server } = require("socket.io");
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
    cors: {
-    origin: "*"
+    origin: ["http://localhost:3000","https://chat-whatsapp-clone.netlify.app"]
    },
     reconnection: true,
     reconnectionAttempts: 10,
@@ -25,10 +25,6 @@ const io = new Server(httpServer, {
 
 const PORT = 5000;
 app.use(cors());
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
 app.use(express.json());
 app.use(bodyparser.json());
 
